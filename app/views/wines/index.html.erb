@@ -35,7 +35,7 @@
         <td><%= wine.upc %></td>
         <td><%= wine.rating %></td>
         <td><%= wine.vineyard_id %></td>
-        <td><%= link_to 'Show', wine_path (@user, wine)%></td>
+        <td><%= link_to 'Show', wine%></td>
         <td><%= link_to 'Edit', edit_wine_path(wine) %></td>
         
          <% if current_user.admin? %>
