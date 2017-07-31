@@ -1,0 +1,62 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @wine.name %>
+</p>
+
+<p>
+  <strong>Type wine:</strong>
+  <%= @wine.type_wine %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= image_tag @wine.image_url %>
+</p>
+
+
+<p>
+  <strong>Country:</strong>
+  <%= @wine.country %>
+</p>
+
+
+<p>
+  <strong>Wine year:</strong>
+  <%= @wine.wine_year %>
+</p>
+
+<p>
+  <strong>Upc:</strong>
+  <%= @wine.upc %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @wine.rating %>
+</p>
+
+<p>
+  <strong>Vineyard:</strong>
+  <%= @wine.vineyard_id %>
+</p>
+
+<!--
+<p>
+  <strong>User:</strong>
+  <%#= @wine.user_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%#= @wine.user %>
+</p>
+-->
+<p>
+  <strong>Vineyard:</strong>
+  <%= @wine.vineyard %>
+</p>
+
+<%= link_to 'Edit', edit_wine_path(@wine) %> |
+<%= link_to 'Back', wines_path %>

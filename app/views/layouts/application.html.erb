@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Winery</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,400,300,600,700%7CRaleway:700' rel='stylesheet' type='text/css'>
+        <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+        <link href="http://fonts.googleapis.com/css?family=Cardo:400,400italic" rel="stylesheet" type="text/css">
+        <link href="/assets/font-cardo.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    
+    
+      
+  <nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="home">Meliora</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a href="/home">Home</a></li>
+      <li><a href="/contact">Contact Us</a></li>
+      <li><a href="https://www.linkedin.com/in/carlos-amaro82/">About Us</a></li>
+      <% if user_signed_in? %>
+      <li><a href="/vineyards">My Vineyards</a></li>
+      <li><a href="/wines/new">New Wine</a></li>
+      <li><a href="/profiles">Profile</a></li>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, method: :delete) %>        
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path)  %>  
+  
+  </li>
+<% end %>
+  </head>
+
+
+
+  <body>
+    <%= yield %>
+  </body>
+  
+  
+ <%# <footer>
+  <p>Powered by Kodesh Software 2017</p>
+</footer>%>
+
+<div class="panel panel-default">
+  
+  <div class="panel-footer">Powered by Kodesh Software 2017</div>
+</div>
+
+</html>

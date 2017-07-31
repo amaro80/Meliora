@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Vineyards</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Type vineyard</th>
+      <th>Image url</th>
+      <th>User</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @vineyards.each do |vineyard| %>
+      <tr>
+        <td><%= vineyard.name %></td>
+        <td><%= vineyard.type_vineyard %></td>
+       <!-- <td><%= vineyard.image_url %></td>-->
+        <td><%= image_tag vineyard.image_url %></td>
+        <td><%= vineyard.user_id %></td>
+        <td><%= vineyard.user %></td>
+        <td><%= link_to 'Show', vineyard %></td>
+        <td><%= link_to 'Edit', edit_vineyard_path(vineyard) %></td>
+        <td><%= link_to 'Destroy', vineyard, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Vineyard', new_vineyard_path %>

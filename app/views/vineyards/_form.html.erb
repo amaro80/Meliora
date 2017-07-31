@@ -1,0 +1,41 @@
+<%= form_for(vineyard) do |f| %>
+  <% if vineyard.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(vineyard.errors.count, "error") %> prohibited this vineyard from being saved:</h2>
+
+      <ul>
+      <% vineyard.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :type_vineyard %>
+    <%= f.text_field :type_vineyard %>
+  </div>
+
+  <div class="field">
+    <%= f.file_field :image_url  style="height: 100%;" width: 100%; %>  
+  </div>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.number_field :user_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

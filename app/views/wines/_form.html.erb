@@ -1,0 +1,81 @@
+<%= form_for(wine) do |f| %>
+  <% if wine.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(wine.errors.count, "error") %> prohibited this wine from being saved:</h2>
+
+      <ul>
+      <% wine.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :type_wine %>
+    <%= f.text_field :type_wine %>
+  </div>
+
+  <div class="field">
+    <% f.label :image_url %>
+    <% f.text_field :image_url %>
+    <%= f.file_field :userimage %>
+  </div>
+
+ 
+
+  <div class="field">
+    <%= f.label :country %>
+    <%= f.text_field :country %>
+  </div>
+
+ 
+
+  <div class="field">
+    <%= f.label :wine_year %>
+    <%= f.number_field :wine_year %>
+  </div>
+
+  <div class="field">
+    <%= f.label :upc %>
+    
+    <%# to display the barcode reader %>
+    <div id='barcode-scanner'></div>
+    <%= f.text_field :upc %>
+  </div>
+
+  <div class="field">
+    <%= f.label :rating %>
+    <%= f.number_field :rating %>
+  </div>
+
+  <div class="field">
+    <%= f.label :vineyard_id %>
+    <% options = options_from_collection_for_select(@vineyard, 'id', 'name') %>
+    <%= f.select :vineyard_id, options %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.number_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<script>
+    $(function(){if($("#wine_upc").val()!='')
+    {
+        $("#barcode-scanner").hide();
+        $("#barcode-scanner").prop("disabled",true);
+    }
+        });
+    
+</script>
